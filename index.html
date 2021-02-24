@@ -1,0 +1,784 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An open-source & self-hosted Discord bot for ticket management.">
+      
+      
+      
+        <meta name="author" content="eartharoid">
+      
+      
+        <link rel="canonical" href="https://discordtickets.eartharoid.me/">
+      
+      <link rel="shortcut icon" href="/img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.0">
+    
+    
+      
+        <title>DiscordTickets</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.a3f8f96a.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="primary" data-md-color-accent="primary">
+      
+        <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#discordtickets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 12l-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-10 5h-2v-2h2v2m0-4h-2V7h2v6z"/></svg></span>
+<a href="/changelog">See what's new in v3.0.</a>
+          </div>
+        </aside>
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://discordtickets.eartharoid.me" title="DiscordTickets" class="md-header__button md-logo" aria-label="DiscordTickets">
+      
+  <img src="/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DiscordTickets
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/eartharoid/DiscordTickets/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eartharoid/DiscordTickets
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://discordtickets.eartharoid.me" title="DiscordTickets" class="md-nav__button md-logo" aria-label="DiscordTickets">
+      
+  <img src="/img/logo.png" alt="logo">
+
+    </a>
+    DiscordTickets
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/eartharoid/DiscordTickets/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eartharoid/DiscordTickets
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this" class="md-nav__link">
+    What is this?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is this?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    Screenshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    Contributors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    Sponsors
+  </a>
+  
+    <nav class="md-nav" aria-label="Sponsors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#donate" class="md-nav__link">
+    Donate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="changelog/" class="md-nav__link">
+        Changelog
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hosting/" class="md-nav__link">
+        Fully managed hosting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" data-md-state="indeterminate" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this" class="md-nav__link">
+    What is this?
+  </a>
+  
+    <nav class="md-nav" aria-label="What is this?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshots" class="md-nav__link">
+    Screenshots
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    Contributing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    Contributors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sponsors" class="md-nav__link">
+    Sponsors
+  </a>
+  
+    <nav class="md-nav" aria-label="Sponsors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#donate" class="md-nav__link">
+    Donate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+                  <a href="https://github.com/eartharoid/DiscordTickets/blob/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <p><img src='https://discordtickets.eartharoid.me/img/logo-small-circle.png' align='left' width='180px' height='180px' style='margin: 30px 40px 0 0'/></p>
+<!-- <img align='left' width='0' height='192px' hspace='10'/> -->
+
+<!-- omit in toc -->
+<h1 id="discordtickets"><a href="https://discordtickets.eartharoid.me">DiscordTickets</a><a class="headerlink" href="#discordtickets" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/eartharoid/DiscordTickets/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/eartharoid/DiscordTickets?style=flat-square" /></a>
+<a href="https://github.com/eartharoid/DiscordTickets/stargazers"><img alt="GitHub forks" src="https://img.shields.io/github/forks/eartharoid/DiscordTickets?style=flat-square" /></a>
+<a href="https://github.com/eartharoid/DiscordTickets/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/eartharoid/DiscordTickets?style=flat-square" /></a>
+<img alt="Codacy grade" src="https://img.shields.io/codacy/grade/14e6851c85444424b75b8bc3f93e93db?logo=codacy&amp;style=flat-square" />
+<a href="https://discord.gg/pXc9vyC"><img alt="Discord" src="https://img.shields.io/discord/451745464480432129?label=discord&amp;color=7289DA&amp;style=flat-square" /></a></p>
+<p>An open-source ticket management bot for Discord - a free alternative to the premium and white-label plans of other popular ticketing bots.</p>
+<p><br><br></p>
+<p>⚠️
+<strong>The code on the master branch is for v3 which is not ready. Please go to the <a href="https://github.com/eartharoid/DiscordTickets/tree/v2">v2 branch</a> for the current version of the code and <a href="https://github.com/eartharoid/DiscordTickets/wiki">documentation</a></strong>.</p>
+<p>⚠️
+<strong>The following information is about v3. Please read the README file on the <a href="https://github.com/eartharoid/DiscordTickets/tree/v2">v2 branch</a> for information that is about the current version.</strong></p>
+<h2 id="what-is-this">What is this?<a class="headerlink" href="#what-is-this" title="Permanent link">&para;</a></h2>
+<p>DiscordTickets is a Discord bot for creating and managing "support ticket" channels. It is a free and open-source alternative to the popular paid "premium" and "white-label" ticketing bots, such as <a href="https://tickettool.xyz/">Ticket Tool</a>, <a href="https://ticketsbot.net/">TicketsBot</a>, <a href="https://tickety.net/">Tickety</a>, <a href="https://helper.gg/">Helper.gg</a>, <a href="https://helper.wtf">Helper</a>, and others.</p>
+<p>DiscordTickets is feature-rich and much more customisable than many of the bots mentioned above. As it is intended for self-hosting, the bot can have your community or company's logo, for free.</p>
+<p>Although intended for use in a single Discord server, the bot can also function in multiple servers at once if run more than one community.</p>
+<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h3>
+<p>DiscordTickets is packed full of features, many of which were suggested by its users. If it's missing a feature you want, you can:</p>
+<ul>
+<li>Create a plugin for it, if you can code JavaScript</li>
+<li>Request someone else to make a plugin</li>
+<li><a href="https://github.com/eartharoid/DiscordTickets/blob/master/.github/CONTRIBUTING.md#submitting-a-feature-request">Submit a feature request</a> if you think many other users would benefit from it</li>
+</ul>
+<p>Here's some of the things that makes DiscordTickets awesome:</p>
+<ol>
+<li>
+<p><strong>Highly customisable</strong><br />
+Some messages can be configured for each server and for each ticket category. Every other message is set in the locale files, making it relatively easy to override the default messages.
+You can also configure the functionality of the bot to your liking and add commands with plugins.</p>
+</li>
+<li>
+<p><strong>Localisable</strong><br />
+If the bot hasn't already been translated to your (community's) language, you can <a href="https://github.com/eartharoid/DiscordTickets/blob/master/.github/CONTRIBUTING.md#translating">translate</a> it yourself.
+Plugin authors are encouraged to support multiple languages as well.</p>
+</li>
+<li>
+<p><strong>Multiple ticket categories</strong><br />
+Each ticket category has its own settings for messages and the support team roles. There's also multiple methods of creating a ticket.</p>
+</li>
+<li>
+<p><strong>A beautiful ticket archives portal</strong><br />
+Add the official <a href="https://github.com/eartharoid/DiscordTickets-Portal">DiscordTickets-Portal</a> plugin for an instant ticket archives website.</p>
+</li>
+<li>
+<p><strong>Plugin support</strong><br />
+Developers can add a lot of functionality to DiscordTickets without modifying the source code by creating plugins. Plugins can listen for client and ticket events, create commands, and more. <a href="https://github.com/eartharoid/DiscordTickets-Portal">DiscordTickets-Portal</a> is an example of what can be done with plugins.</p>
+</li>
+<li>
+<p><strong>Open-source and self-hosted</strong><br />
+It's yours.</p>
+</li>
+<li>
+<p><strong>Supports multiple databases</strong><br />
+DiscordTickets uses <a href="https://github.com/sequelize/sequelize">Sequelize</a> to allow you to choose from SQLite, MySQL, MariaDB, PostgreSQL, or MSSQL for your database, with very little setup.
+If you choose SQLite, which is the default as it is the easiest, you don't need to do anything! If you choose to use another database (recommended), you only need to install the package(s) with NPM and create the database. All of the database tables are created automatically, regardless of which database type you use.</p>
+</li>
+</ol>
+<h3 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>screenshot of a ticket channel</p>
+</blockquote>
+<!-- -->
+<blockquote>
+<p>screenshot of a panel</p>
+</blockquote>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="https://discordtickets.eartharoid.me/installation"><strong>Host it yourself</strong></a></th>
+<th align="center"><a href="https://discordtickets.eartharoid.me/hosting"><strong>Fully managed hosting</strong></a></th>
+<th align="center"><a href="https://discord.com/oauth2/authorize?permissions=8&amp;scope=applications.commands%20bot&amp;client_id=475371285531066368"><strong>Public test bot</strong></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Recommended if you have a host and you've done this before.</td>
+<td align="center">Recommended if you have no idea what you're doing.</td>
+<td align="center">Try out the bot. Not recommended for production use.</td>
+</tr>
+<tr>
+<td align="center"><a href="https://discordtickets.eartharoid.me/installation">Go to the docs »</a></td>
+<td align="center"><a href="https://discordtickets.eartharoid.me/hosting">Learn more »</a></td>
+<td align="center"><a href="https://discord.com/oauth2/authorize?permissions=8&amp;scope=applications.commands%20bot&amp;client_id=475371285531066368">Add to Discord »</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<p>You will find most of information you need at <a href="https://discordtickets.eartharoid.me">discordtickets.eartharoid.me</a>.</p>
+<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
+<p>If the <a href="https://discordtickets.eartharoid.me">documentation</a> leaves you with questions, you can ask for help in the <a href="https://github.com/eartharoid/DiscordTickets/discussions/categories/support-q-a">discussions</a> or join the support server on Discord.</p>
+<p><a href="https://go.eartharoid.me/discord"><img alt="Discord" src="https://discordapp.com/api/guilds/451745464480432129/widget.png?style=banner4" /></a></p>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>For contributing instructions, or to find out all of the ways you can contribute, read <a href="https://github.com/eartharoid/DiscordTickets/blob/master/.github/CONTRIBUTING.md">CONTRIBUTING.md</a>. All contributions are welcome and encouraged, but please <a href="https://github.com/eartharoid/DiscordTickets/blob/master/.github/CONTRIBUTING.md">read the information</a> given before doing so.</p>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<p><a href="https://github.com/eartharoid/DiscordTickets/blob/master/CONTRIBUTORS.md"><img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square" /></a></p>
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<p>Thank you to everyone to has contributed to DiscordTickets, including everyone who has:</p>
+<ul>
+<li>Contributed code</li>
+<li>Translated</li>
+<li>Improved documentation</li>
+<li>Supported and helped others</li>
+<li>Created resources such as tutorials</li>
+<li>Created a public plugin</li>
+<li>Reported bugs</li>
+<li>Requested a feature</li>
+</ul>
+<p><strong>A full list of contributors can be found in <a href="https://github.com/eartharoid/DiscordTickets/blob/master/CONTRIBUTORS.md">CONTRIBUTORS.md</a>.</strong></p>
+<h2 id="sponsors">Sponsors<a class="headerlink" href="#sponsors" title="Permanent link">&para;</a></h2>
+<p>Does your community or company use DiscordTickets? Sponsor the project to get your logo shown here.</p>
+<h3 id="donate">Donate<a class="headerlink" href="#donate" title="Permanent link">&para;</a></h3>
+<p><a href="https://ko-fi.com/eartharoid"><img alt="Donate at ko-fi" src="https://www.ko-fi.com/img/githubbutton_sm.svg" /></a></p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>DiscordTickets is licensed under the <a href="https://github.com/eartharoid/DiscordTickets/blob/master/LICENSE">GPLv3 license</a>.</p>
+<p>DiscordTickets is not related to Discord Inc.</p>
+<p>© 2021 Isaac Saunders</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 24, 2021</span>
+    
+  </small>
+</div>
+                  
+                
+              
+  <footer class="sponsorship">
+    <hr>
+    <a href="https://github.com/eartharoid/DiscordTickets/?sponsor=1" title="Donate to support this project">
+      <span class="twemoji heart-throb-hover">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.655 14.916L8 14.25l.345.666a.752.752 0 0 1-.69 0zm0 0L8 14.25l.345.666.002-.001.006-.003.018-.01a7.643 7.643 0 0 0 .31-.17 22.08 22.08 0 0 0 3.433-2.414C13.956 10.731 16 8.35 16 5.5 16 2.836 13.914 1 11.75 1 10.203 1 8.847 1.802 8 3.02 7.153 1.802 5.797 1 4.25 1 2.086 1 0 2.836 0 5.5c0 2.85 2.045 5.231 3.885 6.818a22.075 22.075 0 0 0 3.744 2.584l.018.01.006.003h.002z"/></svg>
+      </span>
+    </a>
+    <hr>
+  </footer>
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        <a href="changelog/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Changelog
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2021 Isaac Saunders
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/eartharoid" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/eartharoid" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["instant", "tabs", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.217ffd95.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.926459b3.min.js"></script>
+      
+    
+  </body>
+</html>
